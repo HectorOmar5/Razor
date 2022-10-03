@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "HolaMundo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+
+<h2>Bienvenido</h2>
+<h4>Hora Actual</h4>
+    <p>Hoy es: @DateTime.Now</p>
+
+<hr />
+<h4>Saludo Dependiendo De La Hora</h4>
+@{ 
+   int Hora = DateTime.Now.Hour;
+    if(Hora >= 5 && Hora <= 12)
+            {
+                <p>Buenos Dias</p>
+            }
+    else if(Hora >= 13 && Hora <= 19)
+            {
+                <p>Buenas Tardes</p>
+            }
+    else if(Hora > 19 && Hora < 4)
+            {
+                <p>Buenas Noches</p>
+            }
+}
+<hr />
+<h4>Propiedades Del Objeto Request</h4>
+
+<p>URL: @Request.Url</p>
+<p>FilePath: @Request.FilePath</p>
+<p>Pathfísco del recurso: @Request.MapPath(Request.FilePath)</p>
+<p>RequestType: @Request.RequestType</p>
+
+
+
